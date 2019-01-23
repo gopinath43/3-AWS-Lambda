@@ -38,6 +38,9 @@ This lambda function will create AMI(Amazon Machine Images) of instances , only 
   
   cron(0 12 * * ? *)
   
+  Add the Target , Lambda function as "lambda-ami-backup".
+  Create the rule accordingly , Rules route events from your AWS resources for processing by selected targets.
+  
   Testing the solution
   --------------------
   Before we start testing , make sure you have added the instance id respectively and save it to take the backup of the instance.
