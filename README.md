@@ -5,6 +5,8 @@ An Amazon Machine Image (AMI) provides the information required to launch an ins
 
 This lambda function will create AMI(Amazon Machine Images) of instances , only when you add instance id into the lambda function.
 
+And also we have AMI's deregister fucntion to delete the AMIs older then 7 days i.e retention period for 7 days.
+
  Pre-Requisities
  ----------------
   •	Create a IAM role choosing Lambda ( Allows Lambda functions to call AWS services on your behalf ) with AmazonEC2FullAccess policy attached with role name as "AMIBackupRole".
@@ -40,6 +42,8 @@ This lambda function will create AMI(Amazon Machine Images) of instances , only 
   
   Add the Target , Lambda function as "lambda-ami-backup".
   Create the rule accordingly , Rules route events from your AWS resources for processing by selected targets.
+  
+  Follow the same steps for "lambda-ami-deregister" function to delete the AMI's created out of it.
   
   Testing the solution
   --------------------
