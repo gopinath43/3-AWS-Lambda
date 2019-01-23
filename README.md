@@ -8,15 +8,20 @@ This lambda function will create AMI(Amazon Machine Images) of instances , only 
  Pre-Requisities
  ----------------
   •	Create a IAM role choosing Lambda ( Allows Lambda functions to call AWS services on your behalf ) with AmazonEC2FullAccess policy attached with role name as "AMIBackupRole".
+  
   •	Few instances , running or stopped. ( In our case: Ansible-Master , WEB01 , APP01 and DB01 instance )
+  
   •	We are expermenting this lambda function on all the instances accordingly.
 
  Configure Lambda Function
  -------------------------
  This is very basic lambda function written Python3.6 to takeup the ami backup of the instance.
  Remember to choose the same in lambda function.
-  • Copy the code from ami-backup.py in this repo to the lambda function and attach the "AMIBackupRole" created.
+ 
+  • Copy the code from lambda-ami-backup.py in this repo to the lambda function and attach the "AMIBackupRole" created.
+  
   • If you have a lot of Instances, then consider increasing the lambda run time, the default is 3 seconds.
+  
   • Save the lambda function
   
   Configure Lambda Triggers
@@ -28,7 +33,9 @@ This lambda function will create AMI(Amazon Machine Images) of instances , only 
   rate(5 minutes)
   or
   rate(1 day)
+  
   # The below example creates a rule that is triggered every day at 12:00pm UTC.
+  
   cron(0 12 * * ? *)
   
   Testing the solution
