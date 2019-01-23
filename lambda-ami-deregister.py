@@ -11,7 +11,7 @@ def lambda_handler(event, context):
         Filters=[
             {
                 'Name':'description',
-                'Values':['TERRAFORM-AMI',]
+                'Values':['BACKUP-AMI',]
             },
         ],
     )
