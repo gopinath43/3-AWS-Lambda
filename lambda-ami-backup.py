@@ -5,8 +5,9 @@ def lambda_handler(event, context):
         region_name='ap-southeast-1')
     ec2 = session.client('ec2')
     response = ec2.create_image(
-          InstanceId='_______________',
-        Name='Backup-AMI',
+          Description='BACKUP-AMI',
+          InstanceId='i-xxxxxxxxxxxxx',
+        Name='BACKUP-AMI',
         NoReboot=False
     )
     
